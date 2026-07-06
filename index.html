@@ -140,7 +140,26 @@ margin-top:20px;
     background:#e68900;
 }
 
-</style>
+.slider{
+  width:100%;
+  height:260px;
+  overflow:hidden;
+  position:relative;
+  margin:0;
+}
+
+.slider img{
+  position:absolute;
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 1s;
+}
+
+.slider img.active{
+  opacity:1;
+}</style>
 </head>
 
 <body>
@@ -157,6 +176,13 @@ margin-top:20px;
     <a href="#products" class="hero-btn">Shop Now</a>
   </div>
 </section>
+
+<div class="slider">
+    <img src="shivaparvati.png" class="active">
+    <img src="hanuman1.png">
+    <img src="ganesh1.png">
+    <img src="ganesh3.png">
+</div>
 
 <nav>
 <a href="#home">Home</a>
