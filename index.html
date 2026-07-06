@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>SUPER BEEM</title>
 
 <style>
@@ -14,15 +15,21 @@ box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 background:#f5f5f5;
 }
 
+/* HEADER */
+
 header{
-background:#1976d2;
+background:linear-gradient(135deg,#1565c0,#42a5f5);
 color:white;
-text-align:center;
 padding:25px;
+text-align:center;
 }
 
 header h1{
@@ -30,40 +37,81 @@ font-size:42px;
 }
 
 header p{
-font-size:20px;
-margin-top:8px;
+margin-top:10px;
+font-size:18px;
 }
+
+/* MENU */
 
 nav{
 background:#0d47a1;
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
+gap:15px;
+padding:15px;
+position:sticky;
+top:0;
+z-index:999;
 }
 
 nav a{
 color:white;
 text-decoration:none;
-padding:18px 25px;
-font-size:22px;
+font-size:18px;
 font-weight:bold;
+padding:10px 18px;
+border-radius:8px;
 }
 
 nav a:hover{
-background:#1565c0;
+background:#1976d2;
 }
 
-.search-box{
-width:90%;
-max-width:500px;
-display:block;
-margin:20px auto;
-padding:14px;
-font-size:20px;
-border:2px solid #1976d2;
-border-radius:10px;
-outline:none;
+/* HERO */
+
+.hero{
+background:linear-gradient(135deg,#0d47a1,#42a5f5);
+color:white;
+text-align:center;
+padding:60px 20px;
 }
+
+.hero h2{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:25px;
+}
+
+.hero-btn{
+display:inline-block;
+background:#ff9800;
+color:white;
+padding:15px 35px;
+text-decoration:none;
+font-size:20px;
+font-weight:bold;
+border-radius:10px;
+}
+
+/* SEARCH */
+
+.search{
+width:90%;
+max-width:600px;
+display:block;
+margin:25px auto;
+padding:15px;
+font-size:18px;
+border:2px solid #1565c0;
+border-radius:10px;
+}
+
+/* PRODUCT GRID */
 
 .container{
 display:grid;
@@ -75,8 +123,8 @@ padding:20px;
 .card{
 background:white;
 border-radius:15px;
-box-shadow:0 4px 10px rgba(0,0,0,.2);
 padding:15px;
+box-shadow:0 3px 10px rgba(0,0,0,.2);
 text-align:center;
 }
 
@@ -87,231 +135,542 @@ border-radius:10px;
 
 .card h2{
 margin:15px 0;
-font-size:30px;
+font-size:26px;
 }
 
-.btn{
-display:inline-block;
-background:#25D366;
-color:white;
-text-decoration:none;
-padding:14px 28px;
-font-size:22px;
-font-weight:bold;
-border-radius:10px;
-}
+</style>
 
-footer{
-background:#1976d2;
-color:white;
-text-align:center;
-padding:18px;
-margin-top:20px;
-}
-
-.hero{
-    background: linear-gradient(135deg,#0d47a1,#42a5f5);
-    color:#fff;
-    text-align:center;
-    padding:70px 20px;
-}
-
-.hero h2{
-    font-size:36px;
-    margin-bottom:15px;
-}
-
-.hero p{
-    font-size:20px;
-    margin-bottom:25px;
-}
-
-.hero-btn{
-    display:inline-block;
-    background:#ff9800;
-    color:#fff;
-    padding:14px 30px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.hero-btn:hover{
-    background:#e68900;
-}
-
-.slider{
-  width:100%;
-  height:260px;
-  overflow:hidden;
-  position:relative;
-  margin:0;
-}
-
-.slider img{
-  position:absolute;
-  width:100%;
-  height:260px;
-  object-fit:cover;
-  opacity:0;
-  transition:opacity 1s;
-}
-
-.slider img.active{
-  opacity:1;
-}</style>
 </head>
 
 <body>
 
 <header id="home">
+
 <h1>SUPER BEEM</h1>
+
 <p>Premium Wall Stickers & PVC Prints</p>
+
 </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h2>Welcome to SUPER BEEM</h2>
-    <p>Premium Wall Stickers & PVC Prints</p>
-    <a href="#products" class="hero-btn">Shop Now</a>
-  </div>
-</section>
-
-<div class="slider">
-    <img src="shivaparvati.png" class="active">
-    <img src="hanuman1.png">
-    <img src="ganesh1.png">
-    <img src="ganesh3.png">
-</div>
-
 <nav>
-<a href="#home">Home</a>
-<a href="#products">Products</a>
-<a href="#contact">Contact</a>
- <a href="#cart">🛒 Cart (<span id="cart-count">0</span>)</a>   
+
+<a href="#home">🏠 Home</a>
+
+<a href="#products">🛍 Products</a>
+
+<a href="#cart">🛒 Cart</a>
+
+<a href="#contact">📞 Contact</a>
+
 </nav>
 
-<input id="search" class="search-box" type="text" placeholder="🔍 Search Stickers...">
+<section class="hero">
 
- <div class="container" id="products">
+<h2>Welcome To SUPER BEEM</h2>
 
-<div class="card">
-    <img src="shivaparvati.png" alt="Shiva Parvati">
-    <h2>Shiva Parvati Sticker</h2> 
+<p>Best Premium Wall Stickers</p>
 
-<a class="btn"
-href="https://wa.me/918639496081?text=Hi%20SUPER%20BEEM,%20I%20want%20to%20order%20Shiva%20Parvati%20Sticker"
-target="_blank">
-📲 Order on WhatsApp
+<a
+href="#products"
+class="hero-btn">
+
+SHOP NOW
+
 </a>
-<button class="btn" onclick="addToCart('Shiva Parvati Sticker')">
-🛒 Add to Cart
-</button>    
-</div>
 
-<div class="card">
-<img src="hanuman1.png" alt="Hanuman">
-<h2>Hanuman Sticker 1</h2>
-<a class="btn"
-href="https://wa.me/918639496081?text=Hi%20SUPER%20BEEM,%20I%20want%20to%20order%20Hanuman%20Sticker%201"
-target="_blank">
-📲 Order on WhatsApp
-</a>
-</div>
+</section>
 
-<div class="card">
-<img src="hanuman2.png" alt="Hanuman">
-<h2>Hanuman Sticker 2</h2>
-<a class="btn"
-href="https://wa.me/918639496081?text=Hi%20SUPER%20BEEM,%20I%20want%20to%20order%20Hanuman%20Sticker%202"
-target="_blank">
-📲 Order on WhatsApp
-</a>
-</div>
+<input
 
-<div class="card">
-<img src="ganesh.png" alt="Ganesh">
-<h2>Ganesh Sticker</h2>
-<a class="btn"
-href="https://wa.me/918639496081?text=Hi%20SUPER%20BEEM,%20I%20want%20to%20order%20Ganesh%20Sticker"
-target="_blank">
-📲 Order on WhatsApp
-</a>
-</div>
+class="search"
 
-<div class="card">
-<img src="ganesh1.png" alt="Ganesh">
-<h2>Ganesh Sticker 1</h2>
-<a class="btn"
-href="https://wa.me/918639496081?text=Hi%20SUPER%20BEEM,%20I%20want%20to%20order%20Ganesh%20Sticker%201"
-target="_blank">
-📲 Order on WhatsApp
-</a>
-</div>
+id="search"
 
-<div class="card">
-<img src="ganesh3.png" alt="Ganesh">
-<h2>Ganesh Sticker 3</h2>
-<a class="btn"
-href="https://wa.me/918639496081?text=Hi%20SUPER%20BEEM,%20I%20want%20to%20order%20Ganesh%20Sticker%203"
-target="_blank">
-📲 Order on WhatsApp
-</a>
-</div>
+type="text"
 
-<div class="card">
-<img src="durga.png" alt="Durga">
-<h2>Durga Sticker</h2>
-<a class="btn"
-href="https://wa.me/918639496081?text=Hi%20SUPER%20BEEM,%20I%20want%20to%20order%20Durga%20Sticker"
-target="_blank">
-📲 Order on WhatsApp
-</a>
-</div></div>
+placeholder="🔍 Search Products">
 
-<footer id="contact">
-<h3>Contact Us</h3>
-<p>📱 WhatsApp: +91 918639496081</p>
-<p>© 2026 SUPER BEEM</p>
-</footer>
+<!-- PART 2 START --><!-- ===== AUTO IMAGE SLIDER ===== -->
 
-<script>
-const search = document.getElementById("search");
-
-search.addEventListener("keyup", function () {
-  const value = this.value.toLowerCase();
-  const cards = document.querySelectorAll(".card");
-
-  cards.forEach(card => {
-    const text = card.innerText.toLowerCase();
-
-    if (text.includes(value)) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
-});
-</script>
-<script>
-let slides = document.querySelectorAll(".slider img");
-let current = 0;
-
-function showSlide() {
-    slides.forEach(img => img.classList.remove("active"));
-    slides[current].classList.add("active");
-    current = (current + 1) % slides.length;
+<style>
+.slider{
+width:100%;
+height:260px;
+position:relative;
+overflow:hidden;
+background:#ffffff;
+margin-top:10px;
 }
 
-showSlide();
-setInterval(showSlide, 3000);
-let cart = 0;
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+opacity:0;
+transition:opacity 1s ease;
+}
 
-function addToCart(product) {
-    cart++;
-    document.getElementById("cart-count").innerText = cart;
-    alert(product + " added to cart!");
-}    
+.slide.active{
+opacity:1;
+}
+
+.badge{
+position:absolute;
+top:15px;
+left:15px;
+background:#ff0000;
+color:#fff;
+padding:8px 15px;
+border-radius:30px;
+font-weight:bold;
+font-size:18px;
+z-index:10;
+}
+
+.offer{
+position:absolute;
+bottom:20px;
+left:20px;
+background:#1565c0;
+color:#fff;
+padding:10px 20px;
+border-radius:10px;
+font-size:18px;
+font-weight:bold;
+z-index:10;
+}
+</style>
+
+<section class="slider">
+
+<div class="badge">
+🔥 SUPER BEEM
+</div>
+
+<div class="offer">
+Premium PVC Wall Stickers
+</div>
+
+<img src="shivaparvati.png"
+class="slide active">
+
+<img src="hanuman1.png"
+class="slide">
+
+<img src="hanuman2.png"
+class="slide">
+
+<img src="ganesh1.png"
+class="slide">
+
+<img src="ganesh3.png"
+class="slide">
+
+</section>
+
+<!-- ===== PRODUCT SECTION START ===== -->
+
+<section id="products">
+
+<div class="container">
+
+<!-- PART 2B START --><!-- ===== PRODUCT 1 ===== -->
+
+<div class="card">
+
+<div style="position:relative;">
+
+<span style="
+position:absolute;
+top:10px;
+left:10px;
+background:red;
+color:white;
+padding:5px 10px;
+border-radius:20px;
+font-size:14px;">
+⭐ Best Seller
+</span>
+
+<img src="shivaparvati.png" alt="Shiva Parvati">
+
+</div>
+
+<h2>Shiva Parvati Sticker</h2>
+
+<p class="mrp">
+MRP ₹199
+</p>
+
+<p style="
+color:green;
+font-size:28px;
+font-weight:bold;">
+₹59
+</p>
+
+<button
+class="btn cart-btn"
+onclick="addToCart(
+'Shiva Parvati Sticker',
+59)">
+🛒 Add to Cart
+</button>
+
+<button
+class="btn buy-btn"
+onclick="buyNow(
+'Shiva Parvati Sticker')">
+🛍 Buy Now
+</button>
+
+<a
+class="btn"
+style="
+background:#25D366;
+color:white;
+text-decoration:none;"
+href="https://wa.me/918639496081?text=Hi%20SUPER%20BEEM,%20I%20want%20Shiva%20Parvati%20Sticker"
+target="_blank">
+
+📱 WhatsApp Order
+
+</a>
+
+</div>
+
+<!-- ===== PRODUCT 2 ===== -->
+
+<div class="card">
+
+<img src="hanuman1.png"
+alt="Hanuman">
+
+<h2>Hanuman Sticker</h2>
+
+<p class="mrp">
+MRP ₹199
+</p>
+
+<p style="
+color:green;
+font-size:28px;
+font-weight:bold;">
+₹59
+</p>
+
+<button
+class="btn cart-btn"
+onclick="addToCart(
+'Hanuman Sticker',
+59)">
+🛒 Add to Cart
+</button>
+
+<button
+class="btn buy-btn"
+onclick="buyNow(
+'Hanuman Sticker')">
+🛍 Buy Now
+</button>
+
+<a
+class="btn"
+style="
+background:#25D366;
+color:white;
+text-decoration:none;"
+href="https://wa.me/918639496081?text=Hi%20SUPER%20BEEM,%20I%20want%20Hanuman%20Sticker"
+target="_blank">
+
+📱 WhatsApp Order
+
+</a>
+
+</div>
+
+<!-- PART 2C START --><!-- ===== PRODUCT 3 ===== -->
+
+<div class="card">
+
+<img src="ganesh1.png" alt="Ganesh">
+
+<h2>Ganesh Sticker</h2>
+
+<p class="mrp">MRP ₹199</p>
+
+<p style="color:green;font-size:28px;font-weight:bold;">₹59</p>
+
+<button class="btn cart-btn"
+onclick="addToCart('Ganesh Sticker',59)">
+🛒 Add to Cart
+</button>
+
+<button class="btn buy-btn"
+onclick="buyNow('Ganesh Sticker')">
+🛍 Buy Now
+</button>
+
+<a class="btn"
+style="background:#25D366;color:#fff;text-decoration:none;"
+href="https://wa.me/918639496081?text=Hi%20SUPER%20BEEM,%20I%20want%20Ganesh%20Sticker"
+target="_blank">
+📱 WhatsApp Order
+</a>
+
+</div>
+
+<!-- ===== PRODUCT 4 ===== -->
+
+<div class="card">
+
+<img src="ganesh3.png" alt="Ganesh Premium">
+
+<h2>Ganesh Premium Sticker</h2>
+
+<p class="mrp">MRP ₹249</p>
+
+<p style="color:green;font-size:28px;font-weight:bold;">₹79</p>
+
+<button class="btn cart-btn"
+onclick="addToCart('Ganesh Premium Sticker',79)">
+🛒 Add to Cart
+</button>
+
+<button class="btn buy-btn"
+onclick="buyNow('Ganesh Premium Sticker')">
+🛍 Buy Now
+</button>
+
+<a class="btn"
+style="background:#25D366;color:#fff;text-decoration:none;"
+href="https://wa.me/918639496081?text=Hi%20SUPER%20BEEM,%20I%20want%20Ganesh%20Premium%20Sticker"
+target="_blank">
+📱 WhatsApp Order
+</a>
+
+</div>
+
+<!-- ===== PRODUCT 5 TEMPLATE ===== -->
+
+<div class="card">
+
+<img src="yourimage.png" alt="Your Product">
+
+<h2>Your Product Name</h2>
+
+<p class="mrp">MRP ₹199</p>
+
+<p style="color:green;font-size:28px;font-weight:bold;">₹59</p>
+
+<button class="btn cart-btn"
+onclick="addToCart('Your Product Name',59)">
+🛒 Add to Cart
+</button>
+
+<button class="btn buy-btn"
+onclick="buyNow('Your Product Name')">
+🛍 Buy Now
+</button>
+
+<a class="btn"
+style="background:#25D366;color:#fff;text-decoration:none;"
+href="https://wa.me/918639496081"
+target="_blank">
+📱 WhatsApp Order
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PART 3 START --><!-- ===== SHOPPING CART ===== -->
+
+<section id="cart" style="padding:20px;background:#fff;margin:20px;border-radius:15px;box-shadow:0 3px 10px rgba(0,0,0,.2);">
+
+<h2>🛒 Shopping Cart</h2>
+
+<p>Total Items :
+<span id="cart-count">0</span></p>
+
+<p>Total Amount :
+₹<span id="total-price">0</span></p>
+
+<button
+class="btn buy-btn"
+onclick="checkout()">
+
+Proceed To Checkout
+
+</button>
+
+</section>
+
+<script>
+
+let cart=0;
+
+let total=0;
+
+/* ADD TO CART */
+
+function addToCart(product,price){
+
+cart++;
+
+total+=price;
+
+document.getElementById("cart-count").innerText=cart;
+
+document.getElementById("total-price").innerText=total;
+
+alert(product+" Added To Cart");
+
+}
+
+/* BUY NOW */
+
+function buyNow(product){
+
+window.open(
+
+"https://wa.me/918639496081?text=Hi SUPER BEEM, I want to buy "+product,
+
+"_blank"
+
+);
+
+}
+
+/* CHECKOUT */
+
+function checkout(){
+
+window.open(
+
+"https://wa.me/918639496081?text=Hi SUPER BEEM, Checkout Total ₹"+total,
+
+"_blank"
+
+);
+
+}
+
+/* SEARCH */
+
+const search=document.getElementById("search");
+
+search.addEventListener("keyup",function(){
+
+let value=this.value.toLowerCase();
+
+document.querySelectorAll(".card").forEach(card=>{
+
+card.style.display=
+
+card.innerText.toLowerCase().includes(value)
+
+?
+
+"block"
+
+:
+
+"none";
+
+});
+
+});
+
+/* AUTO SLIDER */
+
+let slides=document.querySelectorAll(".slide");
+
+let current=0;
+
+setInterval(()=>{
+
+slides[current].classList.remove("active");
+
+current=(current+1)%slides.length;
+
+slides[current].classList.add("active");
+
+},3000);
+
 </script>
+
+<!-- PART 4 START --><!-- ===== CONTACT ===== -->
+
+<footer id="contact" style="
+background:#0d47a1;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:30px;">
+
+<h2>SUPER BEEM</h2>
+
+<p>Premium Wall Stickers & PVC Prints</p>
+
+<p>📞 WhatsApp : +91 8639496081</p>
+
+<p>📧 Email : superbeem143@gmail.com</p>
+
+<p>© 2026 SUPER BEEM. All Rights Reserved.</p>
+
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+
+<a
+href="https://wa.me/918639496081"
+target="_blank"
+style="
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+font-size:30px;
+box-shadow:0 4px 10px rgba(0,0,0,.3);
+z-index:9999;">
+
+💬
+
+</a>
+
+<!-- BACK TO TOP -->
+
+<button
+onclick="window.scrollTo({top:0,behavior:'smooth'})"
+style="
+position:fixed;
+bottom:90px;
+right:20px;
+width:50px;
+height:50px;
+border:none;
+border-radius:50%;
+background:#1565c0;
+color:white;
+font-size:22px;
+cursor:pointer;
+box-shadow:0 4px 10px rgba(0,0,0,.3);">
+
+⬆️
+
+</button>
+
 </body>
-  </html>
+</html>
